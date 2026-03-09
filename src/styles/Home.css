@@ -11,12 +11,11 @@
 .main-content {
   position: relative;
   min-height: 100vh;
-  padding-top: 0; /* remover o imperior superior */
+  padding-top: 0;
 }
 
-/* --- ESTILOS DO HERO  --- */
 /* ============================
-   ESTILO BASE — qualquer tela
+   HERO SECTION
    ============================ */
 .hero-section {
   width: 100%;
@@ -27,19 +26,15 @@
   background-repeat: no-repeat;
   background-position: left top;
 
-  /* AUTO-RESPONSIVO sem media queries */
-  background-size: calc(61.9vw + 180px) 112%; 
-  /* ajuste fino */
-  
+  /* valor equilibrado entre os dois */
+  background-size: clamp(500px, 62vw, 900px) 112%;
+
   background-color: #fcfdff;
 }
 
-
-
-
-
-/* ------ ESTILOS DO CONTEUDO DE DESTAQUE ------ */
-
+/* ============================
+   CONTEÚDO PRINCIPAL
+   ============================ */
 .hero-content-wrapper {
   max-width: 1200px;
   width: 100%;
@@ -48,16 +43,17 @@
   left: 48%;
   transform: translateX(-50%);
   top: 25%;
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+
   padding: 0 35px;
 }
 
-/* Estilos de texto do destaque */
-
+/* TEXTO */
 .text-content {
-  color: #ffff;
+  color: #ffffff;
   max-width: 500px;
   z-index: 10;
   font-size: 20px;
@@ -76,7 +72,6 @@
   color: #4bc3cc;
   background: white;
   padding: 0.2rem 0.5rem;
-  border-radius: 5px;
   font-size: 2.2rem;
   font-weight: 900;
   display: inline-block;
@@ -84,12 +79,10 @@
   border-radius: 7px;
 }
 
-/* Estilos para o lado direito, imagem */ 
-
+/* IMAGEM */
 .hero-image-overlay {
   position: relative;
   width: 500px;
-   /* puxa pra cima */
   z-index: 10;
 }
 
@@ -99,17 +92,17 @@
   filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
 }
 
+/* BOTÃO */
 .cta-button {
   background: white;
   color: #4bc3cc;
   border: none;
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
-  font-family: 'fredoka one';
+  font-family: 'Fredoka One';
   font-weight: bold;
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
-

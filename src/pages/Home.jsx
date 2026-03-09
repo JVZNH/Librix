@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
 import "../styles/Home.css";
+import Alfabeto from "./Alfabeto"
 import LibrasHeroImage from "../assets/libras-hero.png";
 
 const Home = () => {
@@ -29,7 +30,7 @@ const Home = () => {
                 em uma só linguagem; a da empatia e do respeito.
               </p>
               <button className="cta-button">
-                Começe a Aprender
+                <a href="/Alfabeto">Começe a Aprender</a>
               </button>
             </div>
 

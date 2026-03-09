@@ -16,10 +16,10 @@ export default function Header() {
       <nav className="navbar-box">
         <ul className="navbar-links">
           <li>
-            <Link to="/"><a href="">Home</a></Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <a href="#alfabeto">Alfabeto em Libras</a>
+            <Link to="/alfabeto">Alfabeto em Libras</Link>
           </li>
           <li>
             <a href="#jogos">Jogos</a>
@@ -29,12 +29,6 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-
-      <div className="call-btn-container">
-        <Link to="/contato" className="call-btn">
-          <button className="call-btn">Contato</button>
-        </Link>
-      </div>
     </header>
   );
 }

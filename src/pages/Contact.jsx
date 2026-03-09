@@ -15,10 +15,10 @@ export default function Contato() {
 
       <section className="contact-section">
         {/* Bgzinhos */}
-        <div class="floating-shape shape1"></div>
-        <div class="floating-shape shape2"></div>
+        <div className="floating-shape shape1"></div>
+        <div className="floating-shape shape2"></div>
 
-        <div className="contact-wrapper">
+        
           {/* ===========================================================
                 COLUNA ESQUERDA
           =========================================================== */}
@@ -28,56 +28,6 @@ export default function Contato() {
               Entre em contato com nossa equipe. Estamos aqui para te ajudar!
             </p>
 
-            <div className="info-card">
-              <i className="ri-map-pin-line"></i>
-              <div>
-                <h4>Endereço</h4>
-                <p>Chimarrão - MA, Brasil</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <i className="ri-phone-line"></i>
-              <div>
-                <h4>Telefone</h4>
-                <p>(86) 9 9999-9999</p>
-              </div>
-            </div>
-
-            <div className="info-card">
-              <i className="ri-mail-line"></i>
-              <div>
-                <h4>E-mail</h4>
-                <p>contatolibrix@gmail.com</p>
-              </div>
-            </div>
-
-            {/* ======================================
-                PERGUNTAS FREQUENTES (FAQ)
-            ====================================== */}
-            <div className="faq-container" data-aos="fade-up">
-              <h3>Perguntas Frequentes</h3>
-
-              <details className="faq-item">
-                <summary>Quem desenvolve este projeto?</summary>
-                <p>
-                  Alunos do curso técnico em Informática do IFMA – Campus Timon.
-                </p>
-              </details>
-
-              <details className="faq-item">
-                <summary>Como posso entrar em contato?</summary>
-                <p>Use o formulário ao lado ou nossas redes sociais.</p>
-              </details>
-
-              <details className="faq-item">
-                <summary>Posso sugerir melhorias?</summary>
-                <p>Com certeza! Toda sugestão é bem-vinda.</p>
-              </details>
-            </div>
-
-            
-          </div>
 
           {/* ===========================================================
                 COLUNA DIREITA
@@ -135,6 +85,7 @@ export default function Contato() {
             </div>
           </div>
         </div>
+        
       </section>
     </>
   );
