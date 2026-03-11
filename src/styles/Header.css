@@ -1,94 +1,185 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
 
 .header-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 5px; /* equivalente ao Figma */
   position: absolute;
-  top: 30px;
+  top: 20px;
   left: 0;
-  z-index: 100;
-  gap: 50px;
- 
-  
+  width: 100%;
+  z-index: 20;
+  padding: 0 24px;
 }
 
-/* Logo */
+.header-inner {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr auto;
+  align-items: center;
+  gap: 20px;
+}
+
 .header-logo-area {
   display: flex;
   align-items: center;
-  gap: 0px;
-  
+  justify-content: flex-start;
+  text-decoration: none;
+  width: 100%;
 }
 
-.logo-img {
-  width: 150px;
-  height: 140px;
- /* coloque sua imagem */
-  background-size: cover;
-  background-position: center;
-}
-.logo-img img {
-    width: 170px;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    
+.header-logo-full {
+  width: clamp(150px, 14vw, 230px);
+  height: auto;
+  display: block;
+  object-fit: contain;
 }
 
-.logo-text {
-  font-family: "Fredoka One", sans-serif;
-  font-size: 48px;
-  color: white;
-}
-
-/* Nav */
+/* NAV */
 .navbar-box {
-  background: white;
-  border-radius: 8px;
-  padding: 10px 40px 10px 30px;
+  justify-self: center;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 18px;
+  padding: 18px 30px;
+  box-shadow: 0 12px 28px rgba(34, 61, 109, 0.08);
+  backdrop-filter: blur(8px);
 }
 
 .navbar-links {
   display: flex;
-  gap: 50px;
   align-items: center;
+  gap: clamp(16px, 2vw, 38px);
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links a {
   font-family: "Montserrat", sans-serif;
-  font-size: 20px;
-  color: #2C7AED;
+  font-size: clamp(0.92rem, 1.15vw, 1.1rem);
+  font-weight: 500;
+  color: #6a88bb;
   text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
 }
 
 .navbar-links a:hover {
-  text-decoration: underline;
+  color: #2c7aed;
 }
 
-/* Botão */
-.call-btn-container {
-  width: 162px;
-  height: 84px;
-  display: flex;
-  align-items: center;
-}
-
+/* BOTÃO */
 .call-btn {
-  width: 100%;
-  height: 100%;
-
-  font-family: "Fredoka One";
-  font-size: 20px;
-  color: white;
-
-  background: linear-gradient(90deg, #2C7AED 50%, #4BC3CC 100%);
-  border: none;
-  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 154px;
+  height: 70px;
+  padding: 0 28px;
+  border-radius: 18px;
+  background: linear-gradient(90deg, #2c7aed 0%, #4bc3cc 100%);
+  color: #ffffff;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.14rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(44, 122, 237, 0.24);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
+
 .call-btn:hover {
- transform: transition scale(20px); 
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(44, 122, 237, 0.28);
+}
+
+/* RESPONSIVO */
+@media (max-width: 1180px) {
+  .header-inner {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo button"
+      "nav nav";
+    gap: 16px 18px;
+  }
+
+  .header-logo-area {
+    grid-area: logo;
+  }
+
+  .navbar-box {
+    grid-area: nav;
+    justify-self: stretch;
+  }
+
+  .call-btn {
+    grid-area: button;
+    justify-self: end;
+    min-width: 142px;
+    height: 62px;
+  }
+
+  .navbar-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .header-logo-full {
+    width: clamp(200px, 24vw, 310px);
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    top: 18px;
+    padding: 0 14px;
+  }
+
+  .header-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "logo"
+      "nav"
+      "button";
+    justify-items: center;
+    gap: 12px;
+  }
+
+  .header-logo-area {
+    justify-content: center;
+  }
+
+  .header-logo-full {
+    width: clamp(180px, 44vw, 260px);
+  }
+
+  .navbar-box {
+    width: 100%;
+    padding: 19px 20px;
+  }
+
+  .navbar-links {
+    justify-content: center;
+    gap: 12px 20px;
+  }
+
+  .call-btn {
+    width: 100%;
+    max-width: 220px;
+    height: 56px;
+    font-size: 1.02rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .header-logo-full {
+    width: 170px;
+  }
+
+  .navbar-box {
+    border-radius: 14px;
+    padding: 14px 12px;
+  }
+
+  .navbar-links a {
+    font-size: 0.93rem;
+  }
 }

@@ -9,7 +9,7 @@ export default function MeuFooter() {
 
             {/* contato */}
             <div className='footer-section'>
-                <h4>contato</h4>
+                <h4>Contato</h4>
                 <p>
                     <FaMapMarkerAlt /> Chimarrão - MA,Brasil
                 </p>
