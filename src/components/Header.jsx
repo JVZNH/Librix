@@ -20,17 +20,13 @@ export default function Header() {
               <Link to="/alfabeto">Alfabeto em Libras</Link>
             </li>
             <li>
-              <a href="#jogos">Jogos</a>
+              <a href="/Jogos">Jogos</a>
             </li>
             <li>
               <a href="#sobre">Sobre Libras</a>
             </li>
           </ul>
         </nav>
-
-        <a href="#contato" className="call-btn">
-          Contato
-        </a>
       </div>
     </header>
   );

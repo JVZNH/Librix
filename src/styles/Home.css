@@ -310,7 +310,7 @@ a {
 .info-bg-main {
   position: absolute;
   top: 125px;
-  right: -10%;
+  right: -20%;
   width: min(78vw, 1120px);
   height: calc(100% - 140px);
   border-radius: 70px 0 0 140px;

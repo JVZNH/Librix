@@ -1,0 +1,48 @@
+.Jogos-container{
+    width: 100%;
+  padding: 160px 40px 120px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  /* DEGRADÊ PRINCIPAL DO FUNDO */
+  background: linear-gradient(135deg, #1f74ff 0%, #3db9ff 45%, #8db8ff 100%);
+}
+
+.Jogos-container::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: -230px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0.02));
+  border-radius: 50%;
+  filter: blur(28px);
+  z-index: 0;
+}
+
+.Jogos-container::after {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  right: -550px;
+  width: 900px;
+  height: 550px;
+  background: rgba(255, 255, 255, 0.12);
+  clip-path: polygon(
+    0% 10%, 40% 0%, 80% 5%, 100% 40%,
+    85% 85%, 40% 100%, 10% 90%
+  );
+  filter: blur(14px);
+  z-index: 0;
+}
+
+.cards-jogos{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
