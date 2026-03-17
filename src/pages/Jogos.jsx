@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/Jogos.css";
 import { Link } from "react-router-dom";
 import GameCard from "../components/GameCard";
-import Quiz from "./Quiz"
+
 
 export default function Jogos(){
     return(
@@ -25,14 +25,14 @@ export default function Jogos(){
                     titulo="Arraste e solte"
                     descricao="Associe as letras com os sinais corretos."
                     icone="🧩"
-                    rota="/arrastar"
+                    rota="/Arrasta"
                 />
 
                 <GameCard
                     titulo="Descubra pelo video"
                     descricao="veja o sinal e descubra qual letra ele representa."
                     icone="🎥"
-                    rota="/videoquiz"
+                    rota="/VideoQuiz"
                 />
             </div>
 

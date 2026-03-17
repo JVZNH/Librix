@@ -6,6 +6,7 @@
   position: relative;
   overflow: hidden;
 
+
   /* DEGRADÊ PRINCIPAL DO FUNDO */
   background: linear-gradient(135deg, #1f74ff 0%, #3db9ff 45%, #8db8ff 100%);
 }
