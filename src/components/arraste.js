@@ -1,22 +1,28 @@
 export const itens = [
-    {
-        id: 1,
-        letra: "A",
-        imagem: "/imagem/A.png"
-    },
-    {
-        id: 2,
-        letra:"B",
-        imagem: "/imagem/B.png"
-    },
-    {
-        id: 3,
-        letra: "c",
-        imagem: "/imagem/C.png"
-    },
-    {
-        id: 4,
-        letra: "D",
-        imagem: "/imagem/D.png"
-    }
-]
+  { id: 1, letra: "A", imagem: "/alfabeto/a.svg" },
+  { id: 2, letra: "B", imagem: "/alfabeto/b.svg" },
+  { id: 3, letra: "C", imagem: "/alfabeto/c.svg" },
+  { id: 4, letra: "D", imagem: "/alfabeto/d.svg" },
+  { id: 5, letra: "E", imagem: "/alfabeto/e.svg" },
+  { id: 6, letra: "F", imagem: "/alfabeto/f.svg" },
+  { id: 7, letra: "G", imagem: "/alfabeto/g.svg" },
+  { id: 8, letra: "H", imagem: "/alfabeto/h.svg" },
+  { id: 9, letra: "I", imagem: "/alfabeto/i.svg" },
+  { id: 10, letra: "J", imagem: "/alfabeto/j.svg" },
+  { id: 11, letra: "K", imagem: "/alfabeto/k.svg" },
+  { id: 12, letra: "L", imagem: "/alfabeto/l.svg" },
+  { id: 13, letra: "M", imagem: "/alfabeto/m.svg" },
+  { id: 14, letra: "N", imagem: "/alfabeto/n.svg" },
+  { id: 15, letra: "O", imagem: "/alfabeto/o.svg" },
+  { id: 16, letra: "P", imagem: "/alfabeto/p.svg" },
+  { id: 17, letra: "Q", imagem: "/alfabeto/q.svg" },
+  { id: 18, letra: "R", imagem: "/alfabeto/r.svg" },
+  { id: 19, letra: "S", imagem: "/alfabeto/s.svg" },
+  { id: 20, letra: "T", imagem: "/alfabeto/t.svg" },
+  { id: 21, letra: "U", imagem: "/alfabeto/u.svg" },
+  { id: 22, letra: "V", imagem: "/alfabeto/v.svg" },
+  { id: 23, letra: "W", imagem: "/alfabeto/w.svg" },
+  { id: 24, letra: "X", imagem: "/alfabeto/x.svg" },
+  { id: 25, letra: "Y", imagem: "/alfabeto/y.svg" },
+  { id: 26, letra: "Z", imagem: "/alfabeto/z.svg" },
+];

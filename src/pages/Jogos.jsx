@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import GameCard from "../components/GameCard";
+import ArrastaModal from "../components/ArrastaModal";
 import "../styles/Jogos.css";
 
 export default function Jogos() {
+  const [arrastaModalOpen, setArrastaModalOpen] = useState(false);
+
   return (
     <div className="jogos-page">
       <main className="jogos-main">
@@ -72,7 +75,11 @@ export default function Jogos() {
         <section className="jogos-cards-section" id="jogos-lista">
           <div className="jogos-cards-bg" aria-hidden="true">
             <span className="jogos-cards-bg-main"></span>
+            <span className="jogos-cards-bg-panel"></span>
+            <span className="jogos-cards-bg-line jogos-cards-bg-line-1"></span>
+            <span className="jogos-cards-bg-line jogos-cards-bg-line-2"></span>
             <span className="jogos-cards-bg-glow"></span>
+            <span className="jogos-cards-bg-orb"></span>
           </div>
 
           <div className="jogos-cards-container">
@@ -89,27 +96,29 @@ export default function Jogos() {
               <GameCard
                 titulo="Quiz do Alfabeto"
                 descricao="Responda perguntas sobre os sinais em Libras."
-                icone="🎮"
                 rota="/Quiz"
               />
 
               <GameCard
                 titulo="Arraste e solte"
                 descricao="Associe as letras com os sinais corretos."
-                icone="🧩"
-                rota="/Arrasta"
+                onClick={() => setArrastaModalOpen(true)}
               />
 
               <GameCard
                 titulo="Descubra pelo vídeo"
                 descricao="Veja o sinal e descubra qual letra ele representa."
-                icone="🎥"
                 rota="/VideoQuiz"
               />
             </div>
           </div>
         </section>
       </main>
+
+      <ArrastaModal
+        open={arrastaModalOpen}
+        onClose={() => setArrastaModalOpen(false)}
+      />
     </div>
   );
 }

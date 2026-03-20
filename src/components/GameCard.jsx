@@ -2,8 +2,19 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "../styles/GameCard.css";
 
-function GameCard({ titulo, descricao, icone, rota }) {
+function GameCard({ titulo, descricao, rota, onClick }) {
   const navigate = useNavigate();
+
+  function handleAction() {
+    if (onClick) {
+      onClick();
+      return;
+    }
+
+    if (rota) {
+      navigate(rota);
+    }
+  }
 
   const getTema = () => {
     const tituloLower = titulo.toLowerCase();
@@ -59,7 +70,7 @@ function GameCard({ titulo, descricao, icone, rota }) {
 
       <p>{descricao}</p>
 
-      <button className="game-btn" onClick={() => navigate(rota)}>
+      <button className="game-btn" onClick={handleAction}>
         Jogar
       </button>
     </article>
