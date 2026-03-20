@@ -60,7 +60,14 @@ function VideoQuiz() {
             <div className="Vquiz-card">
 
                 {/* video */}
-                <video src={perguntaAtual.video} controls className="video" />
+                 <div className="video-wrapper">
+                    <iframe
+                        src={`https://www.youtube.com/embed/${perguntaAtual.youtubeId}?controls=0`}
+                        title="video"   
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                    ></iframe>
+                </div>
 
                 <p className="pergunta">{perguntaAtual.pergunta}</p>
 

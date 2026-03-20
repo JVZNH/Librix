@@ -122,16 +122,6 @@ font-weight:bold;
 
 }
 
-/* pontos */
-
-.quiz-pontos{
-
-margin-top:10px;
-
-font-size:14px;
-
-}
-
 /* final */
 
 .final button{
@@ -151,13 +141,5 @@ color:#2f6fd6;
 font-weight:bold;
 
 cursor:pointer;
-
-}
-
-.pontuacao-final{
-
-font-size:30px;
-
-font-weight:bold;
 
 }

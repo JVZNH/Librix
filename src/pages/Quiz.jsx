@@ -5,7 +5,6 @@ import "../styles/Quiz.css";
 function Quiz(){
 
     const [indice, setIndice] = useState(0)
-    const [pontos, setPontos] = useState(0)
     const [mensagem, setMensagem] = useState("")
     const [finalizado, setFinalizado] = useState(false)
 
@@ -18,7 +17,6 @@ function Quiz(){
         if(opcao === pergunta.letra){
             somAcerto.play()
             setMensagem("✔️ Parabéns, você acertou!")
-            setPontos(pontos + 1)
         }else{
             somErro.play()
             setMensagem(`❌ Errado! A resposta correta era ${pergunta.letra}`)
@@ -38,7 +36,6 @@ function Quiz(){
 
     function reiniciar(){
         setIndice(0)
-        setPontos(0)
         setFinalizado(false)
     }
 
@@ -49,12 +46,6 @@ function Quiz(){
                 <div className="quiz-card final">
 
                     <h1>🏆 quiz finalizado</h1>
-
-                    <h2>sua pontuação</h2>
-
-                    <p className="pontuacao-final">
-                        {pontos} / {quizPerguntas.length}
-                    </p>
 
                     <button onClick={reiniciar}>
                         Jogar Novamente
@@ -100,10 +91,6 @@ function Quiz(){
 
                 <p className="quiz-feedback">
                     {mensagem}
-                </p>
-
-                <p className="quiz-pontos">
-                    ⭐ Pontos: {pontos}
                 </p>
 
             </div>
