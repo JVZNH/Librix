@@ -1,18 +1,34 @@
 import React, { useEffect, useState } from "react";
 import ArrastaGame from "./ArrastaGame";
+import { itens } from "./arraste";
 import "../styles/ArrastaModal.css";
+
+function shuffleArray(array) {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 export default function ArrastaModal({ open, onClose }) {
   const [fase, setFase] = useState("intro");
   const [gameKey, setGameKey] = useState(0);
+  const [previewItems, setPreviewItems] = useState([]);
 
+  // reset + gerar preview aleatório
   useEffect(() => {
     if (open) {
       setFase("intro");
       setGameKey((prev) => prev + 1);
+
+      const embaralhado = shuffleArray(itens);
+      setPreviewItems(embaralhado.slice(0, 3)); // pega 3 aleatórios
     }
   }, [open]);
 
+  // ESC pra fechar
   useEffect(() => {
     function handleEsc(e) {
       if (e.key === "Escape") {
@@ -39,10 +55,12 @@ export default function ArrastaModal({ open, onClose }) {
   return (
     <div className="arrasta-modal-overlay" onClick={onClose}>
       <div className="arrasta-modal" onClick={(e) => e.stopPropagation()}>
+        
         <button className="arrasta-modal-close" onClick={onClose}>
           ×
         </button>
 
+        {/* INTRO */}
         {fase === "intro" && (
           <div className="arrasta-modal-screen">
             <span className="arrasta-modal-badge">Jogo em Libras</span>
@@ -54,16 +72,16 @@ export default function ArrastaModal({ open, onClose }) {
               Acerte todas para concluir o desafio.
             </p>
 
+            {/* PREVIEW ALEATÓRIO */}
             <div className="arrasta-modal-preview">
-              <div className="arrasta-preview-card">
-                <img src="/alfabeto/a.png" alt="Sinal da letra A" />
-              </div>
-              <div className="arrasta-preview-card">
-                <img src="/alfabeto/b.png" alt="Sinal da letra B" />
-              </div>
-              <div className="arrasta-preview-card">
-                <img src="/alfabeto/c.png" alt="Sinal da letra C" />
-              </div>
+              {previewItems.map((item) => (
+                <div key={item.id} className="arrasta-preview-card">
+                  <img
+                    src={item.imagem}
+                    alt={`Sinal da letra ${item.letra}`}
+                  />
+                </div>
+              ))}
             </div>
 
             <div className="arrasta-modal-actions">
@@ -81,12 +99,14 @@ export default function ArrastaModal({ open, onClose }) {
           </div>
         )}
 
+        {/* JOGO */}
         {fase === "jogo" && (
           <div className="arrasta-modal-screen">
             <ArrastaGame key={gameKey} onFinish={() => setFase("final")} />
           </div>
         )}
 
+        {/* FINAL */}
         {fase === "final" && (
           <div className="arrasta-modal-screen final">
             <span className="arrasta-modal-badge">Desafio concluído</span>
@@ -102,7 +122,10 @@ export default function ArrastaModal({ open, onClose }) {
                 Fechar
               </button>
 
-              <button className="arrasta-modal-primary" onClick={jogarNovamente}>
+              <button
+                className="arrasta-modal-primary"
+                onClick={jogarNovamente}
+              >
                 Jogar novamente
               </button>
             </div>

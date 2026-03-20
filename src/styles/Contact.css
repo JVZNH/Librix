@@ -1,296 +1,554 @@
-/* =============================
-   SEÇÃO DE CONTATO (BACKGROUND)
-   ============================= */
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
 .contact-section {
-  width: 100%;
+  position: relative;
   min-height: 100vh;
-  padding: 180px 40px 120px 40px;
-  position: relative;
+  padding: 170px 24px 110px;
   overflow: hidden;
-  padding-bottom: 0;
-  margin-bottom: 0;
-
-  /* background principal */
-  background: linear-gradient(135deg, #1f74ff 0%, #1eaedb 60%, #4cd6ff 100%);
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at top right, rgba(87, 208, 192, 0.06), transparent 24%),
+    linear-gradient(180deg, #fcfdff 0%, #f9fbff 100%);
 }
 
-/* =============================
-   CURVA INFERIOR (SEPARADOR)
-   ============================= */
-.contact-section .curve {
+.contact-bg {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background: #ffffff;
-  clip-path: ellipse(75% 100% at 50% 0%);
-  z-index: 2;
-}
-
-/* =============================
-   FORMAS DE FUNDO
-   ============================= */
-.contact-section::before {
-  content: "";
-  position: absolute;
-  width: 4200px;
-  height: 420px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 50%;
-  top: -80px;
-  left: -120px;
-  filter: blur(12px);
-  z-index: 0;
-}
-
-.contact-section::after {
-  content: "";
-  position: absolute;
-  width: 480px;
-  height: 400px;
-  background: rgba(255, 255, 255, 0.09);
-  clip-path: polygon(0% 0%, 100% 10%, 80% 100%, 10% 90%);
-  bottom: -100px;
-  right: -80px;
-  filter: blur(12px);
-  z-index: 0;
-}
-
-/* =============================
-   FORMAS FLUTUANTES
-   ============================= */
-.floating-shape {
-  position: absolute;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(4px);
-  border-radius: 20px;
-  animation: float 6s ease-in-out infinite;
-}
-
-.shape1 {
-  width: 160px;
-  height: 160px;
-  top: 20%;
-  left: 12%;
-  transform: rotate(18deg);
-}
-
-.shape2 {
-  width: 120px;
-  height: 120px;
-  bottom: 20%;
-  right: 18%;
-  transform: rotate(-12deg);
-}
-
-@keyframes float {
-  0% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-18px) rotate(3deg); }
-  100% { transform: translateY(0) rotate(0deg); }
-}
-
-/* =============================
-   GRID PRINCIPAL
-   ============================= */
-.contact-wrapper {
-  max-width: 1350px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 60px;
-  position: relative;
-  z-index: 10;
-}
-
-/* =============================
-   COLUNA ESQUERDA
-   ============================= */
-.contact-left h1 {
-  font-size: 3rem;
-  font-family: "Fredoka One";
-  color: #ffffff;
-}
-
-.contact-left p {
-  max-width: 420px;
-  line-height: 1.6;
-  color: #ffffff;
-  font-family: "montserrat";
-  margin-top: 10px;
-}
-
-
-/* =============================
-   FORMULÁRIO
-   ============================= */
-.contact-right {
-    width: 100%;
-    margin: 20px auto;
-    padding: 25px;
-    box-sizing: border-box;
-    display: flex;
-    
-}
-
-.contact-mascot {
-  position: absolute;
-  top: -35px;
-  right: -35px;
-  width: 170px;
-  opacity: 0.22;
+  inset: 0;
   pointer-events: none;
+  z-index: 0;
+}
+
+.contact-bg-main {
+  position: absolute;
+  top: -8%;
+  left: -3%;
+  width: min(78vw, 1120px);
+  height: 112%;
+  border-radius: 0 64px 180px 0;
+  background: linear-gradient(100deg, #2d74ea 0%, #377ef0 34%, #49aee0 70%, #58d1c0 100%);
+  transform: rotate(-7deg);
+  box-shadow:
+    inset 0 0 70px rgba(255, 255, 255, 0.06),
+    0 30px 80px rgba(46, 102, 214, 0.12);
+}
+
+.contact-bg-orb {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.contact-bg-orb-1 {
+  top: -120px;
+  left: -120px;
+  width: 360px;
+  height: 360px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.18) 0 26%,
+      rgba(255, 255, 255, 0.09) 26% 47%,
+      rgba(255, 255, 255, 0.05) 47% 61%,
+      transparent 61%
+    );
+}
+
+.contact-bg-orb-2 {
+  right: 7%;
+  top: 18%;
+  width: 280px;
+  height: 280px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(92, 219, 198, 0.16) 0%,
+      rgba(92, 219, 198, 0.08) 40%,
+      rgba(92, 219, 198, 0.03) 62%,
+      transparent 74%
+    );
+  filter: blur(6px);
+}
+
+.contact-bg-line {
+  position: absolute;
+  height: 2px;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.04) 12%,
+      rgba(255, 255, 255, 0.16) 50%,
+      rgba(255, 255, 255, 0.04) 88%,
+      transparent 100%
+    );
+  transform: rotate(-38deg);
+  transform-origin: left center;
+}
+
+.contact-bg-line-1 {
+  top: 240px;
+  left: 110px;
+  width: 860px;
+}
+
+.contact-bg-line-2 {
+  top: 470px;
+  left: 220px;
+  width: 760px;
+}
+
+.contact-bg-glow {
+  position: absolute;
+  left: 34%;
+  top: 28%;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(109, 255, 229, 0.16) 0%,
+      rgba(109, 255, 229, 0.09) 34%,
+      rgba(109, 255, 229, 0.03) 56%,
+      transparent 72%
+    );
+  filter: blur(10px);
+}
+
+.contact-bg-card {
+  position: absolute;
+  right: 23%;
+  bottom: 13%;
+  width: 300px;
+  height: 300px;
+  border-radius: 24px;
+  transform: rotate(45deg);
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.11),
+      rgba(255, 255, 255, 0.04)
+    );
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.contact-wrapper {
+  position: relative;
+  z-index: 2;
+  width: min(1220px, calc(100% - 20px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(320px, 520px) minmax(320px, 1fr);
+  gap: 36px;
+  align-items: start;
+}
+
+.contact-left {
+  color: #ffffff;
+  padding-top: 10px;
+}
+
+.contact-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #ffffff;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.contact-left h1 {
+  margin: 18px 0 18px;
+  font-family: "Fredoka", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.02;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+}
+
+.contact-lead {
+  max-width: 500px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.94);
+  margin: 0 0 28px;
+}
+
+.contact-info-list {
+  display: grid;
+  gap: 16px;
+  max-width: 470px;
+}
+
+.contact-info-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.contact-info-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 1.15rem;
+}
+
+.contact-info-card h3 {
+  margin: 0 0 6px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.15rem;
+  color: #ffffff;
+}
+
+.contact-info-card p {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.contact-right {
+  width: 100%;
 }
 
 .contact-form {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40px 188px 40px 30px;
-  border-radius: 20px;
-  width: 90%;
-  margin: 20px auto;
-  box-sizing: content-box;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 28px;
+  padding: 30px;
+  box-shadow:
+    0 20px 40px rgba(22, 48, 92, 0.12),
+    0 8px 18px rgba(22, 48, 92, 0.08);
+  border: 1px solid rgba(44, 122, 237, 0.08);
 }
 
 .contact-form h2 {
-  font-family: "Fredoka One";
-  color: #2c7aed;
+  margin: 0 0 22px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.8rem;
+  color: #2354a5;
 }
 
-/* INPUTS */
-.input-wrap {
-  position: relative;
-  margin-bottom: 18px;
-  justify-content: left;
+.contact-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
 }
 
-.input-wrap i {
-  position: absolute;
-  top: 50%;
-  left: 14px;
-  transform: translateY(-50%);
-  color: #2c7aed;
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
 }
 
-.input-wrap input,
-.input-wrap textarea {
+.contact-form label span {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #3f4d68;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
   width: 100%;
-  padding: 12px 20px 12px 150px;
-  border-radius: 12px;
-  border: 2px solid #e2e2e2;
-}
-
-.input-wrap textarea {
-  height: 70px;
-}
-
-/* BOTÃO */
-.contact-btn {
-  width: 150%;
-  padding: 14px;
-  border-radius: 12px;
-  font-family: "Fredoka One";
-  background: linear-gradient(90deg, #2c7aed, #4bc3cc);
-  color: white;
-  cursor: pointer;
-
-}
-
-/* =============================
-   FAQ
-   ============================= */
-.faq-container {
-  margin-top: 40px;
-  background: #ffffffc7;
-  padding: 20px;
+  border: 1px solid #d9e5fb;
   border-radius: 16px;
+  padding: 14px 16px;
+  font-size: 0.98rem;
+  font-family: "Montserrat", sans-serif;
+  background: #ffffff;
+  color: #1f2a44;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  resize: none;
 }
 
-.faq-container h3 {
-  color: #2c7aed;
-  font-family: 'Fredoka One';
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #2c7aed;
+  box-shadow: 0 0 0 4px rgba(44, 122, 237, 0.12);
+}
+
+.contact-btn {
+  width: 100%;
+  min-height: 56px;
+  margin-top: 6px;
+  border: none;
+  border-radius: 16px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  background: linear-gradient(90deg, #2c7aed 0%, #4bc3cc 100%);
+  color: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(44, 122, 237, 0.22);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px rgba(44, 122, 237, 0.28);
+}
+
+.contact-extra-section {
+  position: relative;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+  padding: 100px 24px 110px;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.contact-extra-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-extra-main {
+  position: absolute;
+  top: 110px;
+  right: -18%;
+  width: min(76vw, 1040px);
+  height: calc(100% - 120px);
+  border-radius: 70px 0 0 140px;
+  background: linear-gradient(260deg, #2d74ea 0%, #377ef0 34%, #49aee0 70%, #58d1c0 100%);
+  transform: rotate(7deg);
+  opacity: 0.08;
+}
+
+.contact-extra-glow {
+  position: absolute;
+  left: 8%;
+  bottom: 80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      rgba(75, 195, 204, 0.14) 0%,
+      rgba(75, 195, 204, 0.06) 38%,
+      transparent 72%
+    );
+  filter: blur(14px);
+}
+
+.contact-extra-container {
+  position: relative;
+  z-index: 1;
+  width: min(1200px, 100%);
+  margin: 0 auto;
+}
+
+.contact-extra-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+
+.extra-card {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(44, 122, 237, 0.08);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: 0 18px 34px rgba(34, 61, 109, 0.08);
+}
+
+.extra-card h3 {
+  margin: 0 0 18px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.6rem;
+  color: #2354a5;
+}
+
+.extra-text {
+  margin: 0 0 18px;
+  color: #5f6880;
+  line-height: 1.75;
 }
 
 .faq-item {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background: #f4f6ff;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: #f6f9ff;
+  border: 1px solid rgba(44, 122, 237, 0.06);
+  margin-bottom: 12px;
+}
+
+.faq-item strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #2b5fb6;
 }
 
 .faq-item p {
-  color: #1a1919;
-}
-
-/* =============================
-   TEAM
-   ============================= */
-
-.team-box {
-  margin-top: 40px;
-  background: #fff;
-  padding: 25px 25px 25px 25px;
-  border-radius: 16px;
-  color: #000;
-  text-align: center;
-  margin: 150px;
+  margin: 0;
+  color: #5f6880;
+  line-height: 1.65;
 }
 
 .team-grid {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
 }
 
 .team-card {
-  background: #f4f6ff;
-  padding: 15px;
-  width: 120px;
+  background: #f6f9ff;
+  border-radius: 20px;
+  padding: 18px 14px;
   text-align: center;
-  border-radius: 14px;
-  color: #000
-}
-.team-card p {
-  color: #3d3838e3
+  border: 1px solid rgba(44, 122, 237, 0.06);
 }
 
 .team-avatar {
-  width: 55px;
-  height: 55px;
-  background: linear-gradient(45deg, #ff6b6b, #4d7cff);
-  border-radius: 50%;
-  margin: 0 auto 10px;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 12px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2c7aed, #4bc3cc);
+  color: #ffffff;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1rem;
+  box-shadow: 0 10px 20px rgba(44, 122, 237, 0.18);
 }
 
-/* =============================
-   LIBRAS BACKGROUND
-   ============================= */
-#libras-rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
+.team-card h4 {
+  margin: 0 0 6px;
+  font-family: "Fredoka", sans-serif;
+  font-size: 1.05rem;
+  color: #275ab2;
 }
 
-/* =============================
-   RESPONSIVO
-   ============================= */
-@media (max-width: 900px) {
+.team-card p {
+  margin: 0;
+  color: #5f6880;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 980px) {
+  .contact-section {
+    min-height: auto;
+    padding: 148px 24px 80px;
+  }
+
+  .contact-bg-main {
+    top: -6%;
+    left: -4%;
+    width: 118%;
+    height: 88%;
+    border-radius: 0 42px 120px 0;
+    transform: rotate(-8deg);
+  }
+
   .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .contact-left {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .contact-lead {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-info-list {
+    max-width: 100%;
+  }
+
+  .contact-info-card {
+    text-align: left;
+  }
+
+  .contact-form-grid {
     grid-template-columns: 1fr;
   }
 
+  .contact-extra-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
   .contact-section {
-    padding: 80px 20px;
+    padding: 128px 20px 70px;
   }
 
-  .contact-mascot {
-    display: none;
+  .contact-form {
+    padding: 22px 18px;
+    border-radius: 22px;
   }
+
+  .contact-left h1 {
+    font-size: clamp(2.1rem, 10vw, 3rem);
+  }
+
+  .extra-card {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.contact-feedback {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.contact-feedback.success {
+  background: rgba(76, 175, 80, 0.12);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.18);
+}
+
+.contact-feedback.error {
+  background: rgba(255, 87, 87, 0.12);
+  color: #b42318;
+  border: 1px solid rgba(255, 87, 87, 0.18);
+}
+
+.contact-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.team-photo {
+  width: 78px;
+  height: 78px;
+  margin: 0 auto 12px;
+  border-radius: 22px;
+  object-fit: cover;
+  display: block;
+  border: 3px solid rgba(44, 122, 237, 0.12);
+  box-shadow: 0 10px 20px rgba(44, 122, 237, 0.14);
 }
