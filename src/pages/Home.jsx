@@ -50,10 +50,11 @@ const Home = () => {
                   Comece a Aprender
                 </a>
               </div>
+
+           
             </div>
 
             <div className="hero-visual">
-              <div className="hero-visual-backdrop"></div>
               <img
                 src={LibrasHeroImage}
                 alt="Ilustração sobre aprendizado de Libras"
@@ -83,18 +84,18 @@ const Home = () => {
               </h2>
 
               <p className="info-lead">
-                A Libras é uma língua essencial para a comunicação, a inclusão <br />  e
-                o acesso à informação da comunidade surda. Quando seu <br /> ensino é
-                valorizado, damos um passo importante para construir <br /> uma
-                sociedade mais acessível, empática e preparada para <br /> respeitar a
+                A Libras é uma língua essencial para a comunicação, a inclusão e
+                o acesso à informação da comunidade surda. Quando seu ensino é
+                valorizado, damos um passo importante para construir uma
+                sociedade mais acessível, empática e preparada para respeitar a
                 diversidade.
               </p>
 
               <p className="info-text">
-                No Brasil, milhões de pessoas surdas convivem diariamente <br /> com
-                barreiras de comunicação. Por isso, ensinar Libras não é <br /> apenas
-                aprender sinais: é ampliar oportunidades, fortalecer <br /> a cultura
-                surda e permitir que mais pessoas possam interagir, <br /> aprender e
+                No Brasil, milhões de pessoas surdas convivem diariamente com
+                barreiras de comunicação. Por isso, ensinar Libras não é apenas
+                aprender sinais: é ampliar oportunidades, fortalecer a cultura
+                surda e permitir que mais pessoas possam interagir, aprender e
                 participar ativamente da vida em sociedade.
               </p>
 
