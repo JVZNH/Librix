@@ -20,7 +20,8 @@ export default function Alfabeto() {
       const textoBusca = busca.toLowerCase().trim();
 
       const passaBusca =
-        titulo.includes(textoBusca) || letra.includes(textoBusca.toUpperCase());
+        titulo.includes(textoBusca) ||
+        letra.includes(textoBusca.toUpperCase());
 
       const regex = filtros[filtro];
       const passaFiltro = !regex || regex.test(letra);
@@ -33,6 +34,7 @@ export default function Alfabeto() {
     <section className="alfa-section">
       <div className="alfa-bg" aria-hidden="true">
         <span className="alfa-bg-main"></span>
+        <span className="alfa-bg-secondary"></span>
         <span className="alfa-bg-orb alfa-bg-orb-1"></span>
         <span className="alfa-bg-orb alfa-bg-orb-2"></span>
         <span className="alfa-bg-line alfa-bg-line-1"></span>
@@ -55,7 +57,9 @@ export default function Alfabeto() {
 
         <div className="barra-filtro">
           <div className="campo-busca">
-            <span className="icone">🔍</span>
+            <span className="icone">
+              <ion-icon name="search-outline"></ion-icon>
+            </span>
             <input
               type="text"
               placeholder="Buscar por letra ou título..."
@@ -80,7 +84,8 @@ export default function Alfabeto() {
 
         <div className="resultado-topo">
           <p>
-            {videosFiltrados.length} vídeo{videosFiltrados.length !== 1 ? "s" : ""} encontrado
+            {videosFiltrados.length} vídeo
+            {videosFiltrados.length !== 1 ? "s" : ""} encontrado
             {videosFiltrados.length !== 1 ? "s" : ""}
           </p>
         </div>
@@ -88,21 +93,24 @@ export default function Alfabeto() {
         <div className="videos-container">
           {videosFiltrados.map((video) => (
             <article className="video-card" key={video.id}>
-              <div className="card-top">
-                <span className="letra-badge">{video.letra}</span>
-              </div>
-
-              <div className="iframe-wrapper">
-                <iframe
-                  src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                  title={video.titulo}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
+              <div className="iframe-shell">
+                <div className="iframe-wrapper">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
+                    title={video.titulo}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </div>
               </div>
 
               <div className="info">
                 <strong>{video.titulo}</strong>
+
+                <p>
+                  <ion-icon name="hand-left-outline" className="icone"></ion-icon>
+                  Aprenda como fazer a letra {video.letra} em Libras de forma prática.
+                </p>
               </div>
             </article>
           ))}

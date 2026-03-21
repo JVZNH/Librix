@@ -45,7 +45,7 @@ export default function Header() {
               <NavLink to="/jogos">Jogos</NavLink>
             </li>
             <li>
-              <a href="#sobre">Sobre Libras</a>
+              <NavLink to="/contato">Contato</NavLink>
             </li>
           </ul>
         </nav>
