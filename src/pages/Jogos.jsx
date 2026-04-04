@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Header from "../components/Header";
 import GameCard from "../components/GameCard";
 import ArrastaModal from "../components/ArrastaModal";
+import CacaModal from "../components/CacaModal";
 import "../styles/Jogos.css";
 
 export default function Jogos() {
   const [arrastaModalOpen, setArrastaModalOpen] = useState(false);
+  const [cacaModalOpen, setCacaModalOpen] = useState(false);
 
   return (
     <div className="jogos-page">
@@ -51,9 +53,9 @@ export default function Jogos() {
             <div className="jogos-right">
               <div className="jogos-preview">
                 <div className="jogos-preview-card card-a">
-                  <span className="emoji">🎮</span>
-                  <strong>Quiz do Alfabeto</strong>
-                  <p>Teste seus conhecimentos sobre os sinais em Libras.</p>
+                  <span className="emoji">🔍</span>
+                  <strong>Caça ao Sinal</strong>
+                  <p>Encontre o sinal correto entre várias opções visuais.</p>
                 </div>
 
                 <div className="jogos-preview-card card-b">
@@ -94,9 +96,9 @@ export default function Jogos() {
 
             <div className="cards-jogos">
               <GameCard
-                titulo="Quiz do Alfabeto"
-                descricao="Responda perguntas sobre os sinais em Libras."
-                rota="/Quiz"
+                titulo="Caça ao Sinal"
+                descricao="Encontre o sinal correto entre várias imagens."
+                onClick={() => setCacaModalOpen(true)}
               />
 
               <GameCard
@@ -118,6 +120,11 @@ export default function Jogos() {
       <ArrastaModal
         open={arrastaModalOpen}
         onClose={() => setArrastaModalOpen(false)}
+      />
+
+      <CacaModal
+        open={cacaModalOpen}
+        onClose={() => setCacaModalOpen(false)}
       />
     </div>
   );
