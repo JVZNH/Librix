@@ -24,11 +24,11 @@ export default function ArrastaModal({ open, onClose }) {
       setGameKey((prev) => prev + 1);
 
       const embaralhado = shuffleArray(itens);
-      setPreviewItems(embaralhado.slice(0, 3)); // pega 3 aleatórios
+      setPreviewItems(embaralhado.slice(0, 3)); 
     }
   }, [open]);
 
-  // ESC pra fechar
+  
   useEffect(() => {
     function handleEsc(e) {
       if (e.key === "Escape") {

@@ -120,7 +120,7 @@ export default function Contato() {
                 <div className="contact-info-icon">✉</div>
                 <div>
                   <h3>E-mail</h3>
-                  <p>contato@librix.com</p>
+                  <p>librix43@gmial.com</p>
                 </div>
               </div>
 
@@ -267,20 +267,20 @@ export default function Contato() {
               <div className="team-grid">
                 <div className="team-card">
                   <img src={Aluno1} alt="Foto do integrante 1" className="team-photo" />
-                  <h4>Aluno 1</h4>
-                  <p>Desenvolvimento</p>
+                  <h4>Daniel Mesquita</h4>
+                  <p>Desenvolvedor</p>
                 </div>
 
                 <div className="team-card">
                   <img src={Aluno2} alt="Foto do integrante 2" className="team-photo" />
-                  <h4>Aluno 2</h4>
-                  <p>Conteúdo</p>
+                  <h4>Victor Oliveira</h4>
+                  <p>Desenvolvedor</p>
                 </div>
 
                 <div className="team-card">
                   <img src={Aluno3} alt="Foto do integrante 3" className="team-photo" />
                   <h4>Aluno 3</h4>
-                  <p>Design</p>
+                  <p>Orientadora</p>
                 </div>
               </div>
             </article>
