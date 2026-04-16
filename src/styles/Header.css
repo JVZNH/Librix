@@ -140,10 +140,6 @@
     justify-content: center;
     flex-wrap: wrap;
   }
-
-  .header-container.scrolled .header-logo-full {
-    height: 48px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -211,9 +207,5 @@
 
   .navbar-links a {
     font-size: 0.93rem;
-  }
-
-  .header-container.scrolled .header-logo-full {
-    height: 40px;
   }
 }
