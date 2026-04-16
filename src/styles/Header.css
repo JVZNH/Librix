@@ -112,6 +112,16 @@
   border: none;
   cursor: pointer;
   color: #ffffff;
+  outline: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.menu-toggle:focus,
+.menu-toggle:active {
+  outline: none;
+  box-shadow: none;
+  background: transparent;
 }
 
 .header-container.scrolled .menu-toggle {
