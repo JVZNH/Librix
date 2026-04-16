@@ -38,7 +38,7 @@ export default function Header() {
           className="menu-toggle"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          ⋮
+           ≡
         </button>
 
         <nav className={`navbar-box ${menuOpen ? "open" : ""}`}>

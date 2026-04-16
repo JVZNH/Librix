@@ -110,6 +110,10 @@
   background: none;
   border: none;
   cursor: pointer;
+  color: #ffffff;
+}
+
+.menu-toggle.scrolled {
   color: #2c7aed;
 }
 
