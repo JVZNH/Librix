@@ -142,7 +142,7 @@
   }
 
   .header-container.scrolled .header-logo-full {
-    height: 42px;
+    height: 48px;
   }
 }
 
@@ -193,10 +193,6 @@
     padding: 8px 14px;
   }
 
-  .header-container.scrolled .header-logo-full {
-    height: 44px;
-  }
-
   .header-container.scrolled .navbar-box {
     min-height: auto;
     padding: 12px 16px;
@@ -218,6 +214,6 @@
   }
 
   .header-container.scrolled .header-logo-full {
-    height: 34px;
+    height: 40px;
   }
 }
