@@ -103,6 +103,7 @@
   box-shadow: 0 10px 22px rgba(34, 61, 109, 0.08);
 }
 
+
 /*Menu que abre os links*/
 .menu-toggle {
   display: none;
@@ -113,7 +114,7 @@
   color: #ffffff;
 }
 
-.menu-toggle.scrolled {
+.header-container.scrolled .menu-toggle {
   color: #2c7aed;
 }
 
